@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 14.2.1//EN
+N:Guyer;Nicko;;;
+FN:Nicko Guyer
+TITLE:Missionary to Guatemala
+EMAIL;type=INTERNET;type=WORK;type=pref:nicko.guyer@worldinitiativenetwork.org
+TEL;type=CELL;type=VOICE;type=pref:(919) 418-9379
+END:VCARD

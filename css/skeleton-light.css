@@ -34,11 +34,14 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   text-align: center;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 128px auto;
+  padding: 40px;
   box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow:rgb(0,0,0,0.33) 0px 3px 15px;
 }
 .container-left {
   position: relative;
@@ -54,6 +57,7 @@
   width: 100%;
   float: center;
   box-sizing: border-box;
+  padding: 0 0 20px 0;
 }
 
 /* For devices larger than 400px */
@@ -114,7 +118,7 @@ h1 {
 @media (min-width: 550px) {
   h1 {
     font-size: 48px;
-    line-height: 96px;
+    /* line-height: 96px; */
   }
 }
 
@@ -205,6 +209,9 @@ hr {
   object-fit: cover;
   background-position: center;
   border-radius: 50%;
+  margin-top: -64px;
+  border: 10px solid #ffffff;
+  box-shadow:rgb(0,0,0,0.33) 0px 3px 15px;
 }
 
 /* open-sans-regular - vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic */
@@ -258,4 +265,16 @@ hr {
        url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff') format('woff'), /* Modern Browsers */
        url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+.banner {
+  z-index: -1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+}
+
+.footer-image {
+  max-width: 50%;
 }
