@@ -394,14 +394,14 @@ a:hover, a:hover, a:active {
 
 .date {
   font-size: 0.75em;
-  background-color: #d10000;
+  background-color: rgb(207, 25, 16);;
   padding: 0 0.5em 0 0.5em;
   color: #ffffff;
   position: relative;
 }
 
 #date-arrow {
-  border-top: 7px solid #d10000; 
+  border-top: 7px solid rgb(207, 25, 16);; 
   height: 0px;
   width: 0px;
   position: absolute;
