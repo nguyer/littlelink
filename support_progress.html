@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Page Information
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Guyers For Guatemala</title>
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- Themes:
+            Auto:   css/skeleton-auto.css
+            Light:  css/skeleton-light.css
+            Dark:   css/skeleton-dark.css
+     -->
+    <link rel="stylesheet" href="css/skeleton-light.css" />
+
+    <!-- Brand Styles -->
+    <link rel="stylesheet" href="css/brands.css" />
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4997d0" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script>
+      onload = (event) => {
+        const CURRENT_SUPPORT = "45%";
+
+        const today = new Date();
+        const timelineStart = new Date(today.getFullYear(), 3, 0);
+        const timelineEnd = new Date(today.getFullYear(), 11, 31);
+
+        const totalTime = timelineEnd.getTime() - timelineStart.getTime();
+        const elapsedTime = today.getTime() - timelineStart.getTime();
+        let elapsedPercentage = (elapsedTime / totalTime) * 100;
+
+        const dateArrowDiv = document.getElementById("date-arrow");
+        const dateDiv = document.getElementById("date");
+        let datePaddingDiv;
+        if (elapsedPercentage <= 50) {
+          datePaddingDiv = document.getElementById("date-padding-left");
+          dateArrowDiv.style.left = "0px";
+          dateArrowDiv.style.borderRight = "7px solid transparent";
+          dateDiv.style.borderRadius = "5px 5px 5px 0px";
+        } else {
+          datePaddingDiv = document.getElementById("date-padding-right");
+          dateArrowDiv.style.right = "0px";
+          dateArrowDiv.style.borderLeft = "7px solid transparent";
+          const timelineTopDiv = document.getElementById("timeline-top");
+          timelineTopDiv.style.justifyContent = "right";
+          elapsedPercentage = 100 - elapsedPercentage;
+          dateDiv.style.borderRadius = "5px 5px 0px 5px";
+        }
+
+        datePaddingDiv.style.width = elapsedPercentage + "%";
+
+        const todayDiv = document.getElementById("today");
+        const str =
+          "Today: " +
+          today.toLocaleString("default", { month: "short" }) +
+          " " +
+          today.getDate();
+        todayDiv.innerText = str;
+
+        const supportProgressDiv = document.getElementById("support-progress");
+        supportProgressDiv.style.width = CURRENT_SUPPORT;
+        supportProgressDiv.innerText = CURRENT_SUPPORT + " Support Raised";
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="support-graphic">
+      <div class="timeline-top" id="timeline-top">
+        <div id="date-padding-left"></div>
+        <div class="date" id="date">
+          <span id="today"></span>
+          <div id="date-arrow"></div>
+        </div>
+        <div id="date-padding-right"></div>
+      </div>
+      <div class="timeline timeline-middle">
+        <div class="support-progress" id="support-progress"></div>
+        <div class="progress-track"></div>
+      </div>
+      <div class="timeline timeline-bottom">
+        <div>Apr</div>
+        <div>May</div>
+        <div>Jun</div>
+        <div>Jul</div>
+        <div>Aug</div>
+        <div>Sept</div>
+        <div>Oct</div>
+        <div>Nov</div>
+        <div>Dec</div>
+      </div>
+    </div>
+  </body>
+</html>

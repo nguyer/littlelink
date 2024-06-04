@@ -356,6 +356,7 @@ a:hover, a:hover, a:active {
 }
 
 .timeline-bottom div {
+  text-align: center;
   border-right: 1px solid #aaa;
   width: 11.11%;
 }
