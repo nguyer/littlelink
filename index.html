@@ -35,11 +35,15 @@
 
     <script>
       onload = (event) => {
-        const CURRENT_SUPPORT = "88%";
+        const CURRENT_SUPPORT = "90%";
 
         const today = new Date();
-        const timelineStart = new Date(today.getFullYear(), 3, 0);
-        const timelineEnd = new Date(today.getFullYear(), 11, 31);
+        const timelineStart = new Date("2024-04-01");
+        const timelineEnd = new Date("2025-04-29");
+        const oneDay = 24 * 60 * 60 * 1000;
+        const daysRemaining = Math.ceil(
+          Math.abs((today - timelineEnd) / oneDay)
+        );
 
         const totalTime = timelineEnd.getTime() - timelineStart.getTime();
         const elapsedTime = today.getTime() - timelineStart.getTime();
@@ -76,6 +80,22 @@
         const supportProgressDiv = document.getElementById("support-progress");
         supportProgressDiv.style.width = CURRENT_SUPPORT;
         supportProgressDiv.innerText = CURRENT_SUPPORT + " Support Raised";
+
+        const dayCountSpan = document.getElementById("dayCount");
+        const dayDaysSpan = document.getElementById("dayDays");
+
+        switch (daysRemaining) {
+          case daysRemaining < 0:
+            dayCountSpan.innerText = "0";
+            dayDaysSpan.innerText = "days";
+            break;
+          case daysRemaining == 1:
+            dayCountSpan.innerText = daysRemaining;
+            dayDaysSpan.innerText = "day";
+          default:
+            dayCountSpan.innerText = daysRemaining;
+            dayDaysSpan.innerText = "days";
+        }
       };
     </script>
   </head>
@@ -101,6 +121,15 @@
             alt="Guyer Family"
           />
 
+          <!-- Countdown -->
+          <div id="countdown">
+            <div id="dayCount"></div>
+            <div id="dayDays"></div>
+            <div>Until we move to Guatemala!</div>
+            <!-- <img id="airplaneIcon" src="images/icons/airplane.svg"> -->
+            <div class="background"></div>
+          </div>
+
           <!-- Short Bio -->
           <p>
             We're the Guyers, and we are church planting missionaries to
@@ -114,6 +143,7 @@
             support God's work in Guatemala.
           </p>
 
+          <!-- Main video -->
           <div class="video-container">
             <iframe
               src="https://www.youtube.com/embed/9s5-0_LK67s?si=lavmLEDlSjKlkIY0"
@@ -126,8 +156,7 @@
             ></iframe>
           </div>
 
-          <br />
-
+          <!-- Support progress -->
           <h3>Current Monthly Support Progress</h3>
           <div class="support-graphic">
             <div class="timeline-top" id="timeline-top">
@@ -152,15 +181,16 @@
               <div>Oct</div>
               <div>Nov</div>
               <div>Dec</div>
+              <div>Jan</div>
+              <div>Feb</div>
+              <div>Mar</div>
+              <div>Apr</div>
             </div>
           </div>
           <p style="font-size: 0.8em">
-            We were approved as WIN Missionaries on April 4, 2024 and began
-            raising support to go to the mission field. Our goal is to be fully
-            supported by the end of 2024 and ready to move to Guatemala early
-            2025. Our biggest need right now is for commitments for consistent
-            monthly giving. We would be humbly thankful if you would like to
-            support God's work in Guatemala by partnering with us.
+            God has been so faithful to provide, and we are getting very close
+            to our support goal. We have purchased plane tickets to move to
+            Guatemala on April 29, 2025!
           </p>
 
           <br />

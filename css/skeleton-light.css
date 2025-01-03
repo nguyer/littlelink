@@ -408,3 +408,48 @@ a:hover, a:hover, a:active {
   position: absolute;
   bottom: -5px;
 }
+
+#countdown {
+  z-index: 0;
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  padding: 1em;
+  margin: 1.5em;
+  position: relative;
+}
+
+#countdown .background {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-image: url("../images/icons/airplane.svg");
+  background-size: 90px;
+  background-position: top 1em right 1em;
+  background-repeat: no-repeat;
+  opacity: 15%;
+}
+
+#dayCount {
+  color: #4997d0;
+  font-size: 4em;
+  font-weight: 700;
+  display: block;
+  line-height: 1em;
+}
+
+#dayDays {
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+#airplaneIcon {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  bottom: 1em;
+}
