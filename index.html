@@ -38,12 +38,10 @@
         const CURRENT_SUPPORT = "90%";
 
         const today = new Date();
-        const timelineStart = new Date("2024-04-01");
-        const timelineEnd = new Date("2025-04-29");
+        const timelineStart = new Date("2024-04-01T00:00:00.000-04:00");
+        const timelineEnd = new Date("2025-04-29T00:00:00.000-04:00");
         const oneDay = 24 * 60 * 60 * 1000;
-        const daysRemaining = Math.ceil(
-          Math.abs((today - timelineEnd) / oneDay)
-        );
+        const daysRemaining = Math.ceil((timelineEnd - today) / oneDay);
 
         const totalTime = timelineEnd.getTime() - timelineStart.getTime();
         const elapsedTime = today.getTime() - timelineStart.getTime();
