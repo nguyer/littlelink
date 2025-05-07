@@ -32,70 +32,6 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4997d0" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-
-    <script>
-      onload = (event) => {
-        const CURRENT_SUPPORT = "95%";
-
-        const today = new Date();
-        const timelineStart = new Date("2024-04-01T00:00:00.000-04:00");
-        const timelineEnd = new Date("2025-04-29T00:00:00.000-04:00");
-        const oneDay = 24 * 60 * 60 * 1000;
-        const daysRemaining = Math.ceil((timelineEnd - today) / oneDay);
-
-        const totalTime = timelineEnd.getTime() - timelineStart.getTime();
-        const elapsedTime = today.getTime() - timelineStart.getTime();
-        let elapsedPercentage = (elapsedTime / totalTime) * 100;
-
-        const dateArrowDiv = document.getElementById("date-arrow");
-        const dateDiv = document.getElementById("date");
-        let datePaddingDiv;
-        if (elapsedPercentage <= 50) {
-          datePaddingDiv = document.getElementById("date-padding-left");
-          dateArrowDiv.style.left = "0px";
-          dateArrowDiv.style.borderRight = "7px solid transparent";
-          dateDiv.style.borderRadius = "5px 5px 5px 0px";
-        } else {
-          datePaddingDiv = document.getElementById("date-padding-right");
-          dateArrowDiv.style.right = "0px";
-          dateArrowDiv.style.borderLeft = "7px solid transparent";
-          const timelineTopDiv = document.getElementById("timeline-top");
-          timelineTopDiv.style.justifyContent = "right";
-          elapsedPercentage = 100 - elapsedPercentage;
-          dateDiv.style.borderRadius = "5px 5px 0px 5px";
-        }
-
-        datePaddingDiv.style.width = elapsedPercentage + "%";
-
-        const todayDiv = document.getElementById("today");
-        const str =
-          "Today: " +
-          today.toLocaleString("default", { month: "short" }) +
-          " " +
-          today.getDate();
-        todayDiv.innerText = str;
-
-        const supportProgressDiv = document.getElementById("support-progress");
-        supportProgressDiv.style.width = CURRENT_SUPPORT;
-        supportProgressDiv.innerText = CURRENT_SUPPORT + " Support Raised";
-
-        const dayCountSpan = document.getElementById("dayCount");
-        const dayDaysSpan = document.getElementById("dayDays");
-
-        switch (daysRemaining) {
-          case daysRemaining < 0:
-            dayCountSpan.innerText = "0";
-            dayDaysSpan.innerText = "days";
-            break;
-          case daysRemaining == 1:
-            dayCountSpan.innerText = daysRemaining;
-            dayDaysSpan.innerText = "day";
-          default:
-            dayCountSpan.innerText = daysRemaining;
-            dayDaysSpan.innerText = "days";
-        }
-      };
-    </script>
   </head>
 
   <body>
@@ -118,15 +54,6 @@
             class="family-photo"
             alt="Guyer Family"
           />
-
-          <!-- Countdown -->
-          <div id="countdown">
-            <div id="dayCount"></div>
-            <div id="dayDays"></div>
-            <div>Until we move to Guatemala!</div>
-            <!-- <img id="airplaneIcon" src="images/icons/airplane.svg"> -->
-            <div class="background"></div>
-          </div>
 
           <!-- Short Bio -->
           <p>
@@ -153,43 +80,6 @@
               allowfullscreen
             ></iframe>
           </div>
-
-          <!-- Support progress -->
-          <h3>Current Monthly Support Progress</h3>
-          <div class="support-graphic">
-            <div class="timeline-top" id="timeline-top">
-              <div id="date-padding-left"></div>
-              <div class="date" id="date">
-                <span id="today"></span>
-                <div id="date-arrow"></div>
-              </div>
-              <div id="date-padding-right"></div>
-            </div>
-            <div class="timeline timeline-middle">
-              <div class="support-progress" id="support-progress"></div>
-              <div class="progress-track"></div>
-            </div>
-            <div class="timeline timeline-bottom">
-              <div>Apr</div>
-              <div>May</div>
-              <div>Jun</div>
-              <div>Jul</div>
-              <div>Aug</div>
-              <div>Sept</div>
-              <div>Oct</div>
-              <div>Nov</div>
-              <div>Dec</div>
-              <div>Jan</div>
-              <div>Feb</div>
-              <div>Mar</div>
-              <div>Apr</div>
-            </div>
-          </div>
-          <p style="font-size: 0.8em">
-            God has been so faithful to provide, and we are getting very close
-            to our support goal. We have purchased plane tickets to move to
-            Guatemala on April 29, 2025!
-          </p>
 
           <br />
 
